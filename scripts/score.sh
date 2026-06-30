@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
-# Print the highsignal eval cases for a manual or agent-driven pass.
-# Each dirty case must flag the named tell; each clean case must flag nothing.
-# Usage: scripts/score.sh
+# Run the highsignal eval against one or more backends and print each scorecard.
+#
+# Usage:
+#   scripts/score.sh                 # default: codex
+#   scripts/score.sh codex anthropic # several backends
+#
+# Backends and their auth (see tests/eval.py for the full list):
+#   codex       codex exec CLI         (no key)
+#   anthropic   ANTHROPIC_API_KEY env
+#   openrouter  OPENROUTER_API_KEY env + --model
+#   fireworks   FIREWORKS_API_KEY env  + --model  (open models)
 set -euo pipefail
 here="$(cd "$(dirname "$0")/.." && pwd)"
-echo "highsignal eval set — load SKILL.md, run each draft in detect mode, compare to 'expect'."
-echo
-grep -nE '^### |^expect:' "$here/tests/prompts.md"
-echo
-echo "Dirty cases: $(grep -c '^### [0-9]' "$here/tests/prompts.md") · Clean cases: $(grep -c '^### C' "$here/tests/prompts.md")"
+backends=("$@"); [ ${#backends[@]} -eq 0 ] && backends=(codex)
+for b in "${backends[@]}"; do
+  echo "================ $b ================"
+  python3 "$here/tests/eval.py" --backend "$b" || true
+done

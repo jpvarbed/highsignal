@@ -55,9 +55,22 @@ Then ask your agent to "clean up this draft with highsignal" or "detect the AI t
 
 ## Tests
 
-[`tests/prompts.md`](./tests/prompts.md) is the eval set: one dirty draft per tell (does it
-catch them?) plus clean drafts (does it avoid false positives?). Run `scripts/score.sh` to
-print the cases, or score the skill itself against a quality rubric with a linting skill.
+The skill ships with a real eval harness, not just a checklist:
+
+- [`tests/cases.jsonl`](./tests/cases.jsonl) — labeled cases: one dirty draft per tell (must
+  flag it) plus clean drafts (must flag nothing). Each carries its context (social vs
+  long-form), since some tells like em dashes are context-dependent.
+- [`tests/eval.py`](./tests/eval.py) — runs each case through a model in detect mode and
+  scores dirty-catch and clean false-positives separately. Backends: codex, anthropic,
+  openrouter, fireworks.
+- [`scripts/score.sh`](./scripts/score.sh) — run one or more backends.
+
+```bash
+scripts/score.sh codex
+ANTHROPIC_API_KEY=… scripts/score.sh anthropic
+```
+
+Latest cross-model results: [`tests/RESULTS.md`](./tests/RESULTS.md).
 
 ## Companions
 
