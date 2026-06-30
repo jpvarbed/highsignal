@@ -61,10 +61,13 @@ one. Just say what it is.
 - Before: "There are 300 talks. You can't see them all."
 - After: "551 talks. A few I'm not missing:"
 
-**Abstract framing over a number** — leading with a vague observation when a specific figure
-hits harder. Lead with the number or the fact.
-- Before: "There are so many parallel tracks the talk you want always clashes with another."
-- After: "551 talks across 30 tracks."
+**Abstract framing over a number** (lower-confidence) — a vague magnitude word ("a lot",
+"huge", "tons", "many", "way more") sits where a real number belongs. This is a rewrite hint,
+not a hard error: flag it only when a concrete figure is actually available and would clearly
+land harder. Don't flag ordinary informal writing. (In testing, both Claude and Codex catch
+this inconsistently, so treat it as a suggestion, not a verdict.)
+- Before: "We got a huge number of signups this week."
+- After: "We got 4,200 signups this week."
 
 **Business-speak** — lever, unlock, leverage, move the needle, supercharge. Use the plain verb.
 
