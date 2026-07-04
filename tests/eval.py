@@ -29,7 +29,8 @@ TELLS = {
     "filler": "a sentence that carries no information; delete it and lose nothing",
     "abstract-over-number": "vague framing where a concrete number would hit harder",
     "business-speak": "lever, unlock, leverage, move the needle, step-change",
-    "em-dash": "em dashes in a social post (use period/colon)",
+    "label-colon": "a colon faking a beat before a short payoff (\"My hardest problem: sales\")",
+    "em-dash": "em dashes overused in any medium (more than ~1 per 100 words)",
     "real-actual": "real/actual as an empty intensifier",
 }
 
@@ -39,9 +40,9 @@ def build_prompt(draft, context="social"):
         "You are running the 'highsignal' writing skill in DETECT mode.\n"
         "Given the DRAFT, decide which of these AI-writing tells it contains.\n"
         "Only use ids from this exact list:\n" + lines + "\n\n"
-        f"The draft is a {context} piece. Some tells are context-dependent: 'em-dash' "
-        "counts only in a social post, not in long-form prose (where em dashes are fine "
-        "in moderation). Judge accordingly.\n\n"
+        f"The draft is a {context} piece. 'em-dash' counts in any medium when the density "
+        "is high (more than ~1 per 100 words); a single em dash in long-form prose is fine. "
+        "A colon introducing a genuine list is NOT 'label-colon'. Judge accordingly.\n\n"
         "Output ONLY a JSON array of the matching ids (e.g. [\"filler\",\"em-dash\"]), "
         "or [] if the draft is clean. No prose, no explanation, just the array.\n\n"
         f"DRAFT:\n{draft}\n"
@@ -62,7 +63,12 @@ def parse_array(text):
 def call_codex(prompt, model):
     out = subprocess.run(["codex", "exec", "--skip-git-repo-check", prompt],
                          capture_output=True, text=True, timeout=180)
-    return out.stdout + "\n" + out.stderr
+    text = out.stdout + "\n" + out.stderr
+    # a quota-limited codex answers every case with an error banner; without this
+    # guard that scores as [] and a full-suite wipeout masquerades as case failures
+    if "hit your usage limit" in text:
+        raise RuntimeError("codex usage limit hit; retry after the reset shown in the codex error")
+    return text
 
 def call_claude_cli(prompt, model):
     args = ["claude", "-p", prompt] + (["--model", model] if model else [])

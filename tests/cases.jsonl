@@ -10,5 +10,7 @@
 {"id":"10","kind":"dirty","context":"social","expect":"em-dash","draft":"Our new model is faster — cheaper — and it ships today."}
 {"id":"11","kind":"dirty","context":"social","expect":"real-actual","draft":"This is the real reason your evals are flaky and the actual fix nobody mentions."}
 {"id":"C1","kind":"clean","context":"social","expect":null,"draft":"The deploy failed because the migration ran before the new column existed. Reordering the steps fixed it."}
-{"id":"C2","kind":"clean","context":"long-form","expect":null,"draft":"The migration took three weeks. Most of that was data backfill — the schema change itself landed in an afternoon — and the rollout was uneventful."}
+{"id":"C2","kind":"clean","context":"long-form","expect":null,"draft":"The migration took three weeks. Most of that was data backfill. The schema change itself landed in an afternoon, and the rollout was uneventful."}
 {"id":"C3","kind":"clean","context":"social","expect":null,"draft":"The release adds three things: resumable uploads, a dark theme, and per-row permissions."}
+{"id":"12","kind":"dirty","context":"social","expect":"label-colon","draft":"My hardest problem: sales."}
+{"id":"13","kind":"dirty","context":"long-form","expect":"em-dash","draft":"The launch went fine — mostly — but the docs lagged and support felt it — for a full week."}
