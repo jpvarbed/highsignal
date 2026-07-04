@@ -86,6 +86,14 @@ it so, or drop the word.
   someone else's writing or decide what to fix yourself.
 - **rewrite** (default) — fix the tells, return the clean version, and list what changed.
 
+## Worked examples
+
+Longer-form before/after for a whole genre, when the atomic tells above aren't enough:
+
+- [`examples/cold-outreach-email.md`](examples/cold-outreach-email.md) — cold email to an
+  expert/investor: lead with their specific idea (not generic praise), show traction over
+  claims, split tangled asks.
+
 ## Companions (separate skills — use alongside, don't fold in)
 
 highsignal is the opinionated middle pass. It pairs with:
