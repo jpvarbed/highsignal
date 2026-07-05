@@ -66,6 +66,13 @@ expect: **em dashes in posts** — replace with periods/colons for social.
 
 expect: **real/actual as intensifier** — name what makes it so, or drop it.
 
+### 12 — vision abstraction over the outcome
+> We're building an AI-native intelligence layer for field operations.
+
+expect: **vision abstraction over the outcome** — an abstract category label ("intelligence
+layer") with no concrete result. Replace with what it does, ideally a number: "We cut pump
+inspection reports from 42 minutes to 6."
+
 ---
 
 ## Clean cases (must flag nothing)
@@ -85,3 +92,8 @@ expect: no flags. One em dash in long-form prose is fine; not a social post.
 > The release adds three things: resumable uploads, a dark theme, and per-row permissions.
 
 expect: no flags. A real enumeration, not paratactic profundity.
+
+### C4 — category noun used as a literal referent
+> We moved the auth service off the legacy platform onto Workers.
+
+expect: no flags. "platform" is a concrete referent here, not vision-speak.

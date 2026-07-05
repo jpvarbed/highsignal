@@ -1,16 +1,19 @@
-{"id":"1","kind":"dirty","context":"social","expect":"throat-clear","draft":"One thing that really helps with agent reliability: you specify an output format."}
-{"id":"2","kind":"dirty","context":"social","expect":"claimed-emotion","draft":"What surprised me most was that a smaller model handled the routing just fine."}
-{"id":"3","kind":"dirty","context":"social","expect":"manufactured-drama","draft":"I built a linter that refuses to let your code lie to you."}
-{"id":"4","kind":"dirty","context":"social","expect":["manufactured-quotability","parataxis"],"draft":"The cache was always the bottleneck. The database was just along for the ride."}
-{"id":"5","kind":"dirty","context":"social","expect":"parataxis","draft":"We shipped fast. We broke things. We learned."}
-{"id":"6","kind":"dirty","context":"social","expect":"not-just-x","draft":"It's not just a database, it's a system of record for your whole company."}
-{"id":"7","kind":"dirty","context":"social","expect":"filler","draft":"There were forty sessions on the schedule. You couldn't possibly attend all of them."}
-{"id":"8","kind":"dirty","context":"social","expect":"abstract-over-number","draft":"We got a huge number of signups this week, way more than last launch."}
-{"id":"9","kind":"dirty","context":"social","expect":"business-speak","draft":"This unlocks a step-change in velocity and lets teams leverage their existing stack."}
-{"id":"10","kind":"dirty","context":"social","expect":"em-dash","draft":"Our new model is faster — cheaper — and it ships today."}
-{"id":"11","kind":"dirty","context":"social","expect":"real-actual","draft":"This is the real reason your evals are flaky and the actual fix nobody mentions."}
-{"id":"C1","kind":"clean","context":"social","expect":null,"draft":"The deploy failed because the migration ran before the new column existed. Reordering the steps fixed it."}
-{"id":"C2","kind":"clean","context":"long-form","expect":null,"draft":"The migration took three weeks. Most of that was data backfill. The schema change itself landed in an afternoon, and the rollout was uneventful."}
-{"id":"C3","kind":"clean","context":"social","expect":null,"draft":"The release adds three things: resumable uploads, a dark theme, and per-row permissions."}
-{"id":"12","kind":"dirty","context":"social","expect":"label-colon","draft":"My hardest problem: sales."}
-{"id":"13","kind":"dirty","context":"long-form","expect":"em-dash","draft":"The launch went fine — mostly — but the docs lagged and support felt it — for a full week."}
+{"id": "1", "kind": "dirty", "context": "social", "expect": "throat-clear", "draft": "One thing that really helps with agent reliability: you specify an output format."}
+{"id": "2", "kind": "dirty", "context": "social", "expect": "claimed-emotion", "draft": "What surprised me most was that a smaller model handled the routing just fine."}
+{"id": "3", "kind": "dirty", "context": "social", "expect": "manufactured-drama", "draft": "I built a linter that refuses to let your code lie to you."}
+{"id": "4", "kind": "dirty", "context": "social", "expect": ["manufactured-quotability", "parataxis"], "draft": "The cache was always the bottleneck. The database was just along for the ride."}
+{"id": "5", "kind": "dirty", "context": "social", "expect": "parataxis", "draft": "We shipped fast. We broke things. We learned."}
+{"id": "6", "kind": "dirty", "context": "social", "expect": "not-just-x", "draft": "It's not just a database, it's a system of record for your whole company."}
+{"id": "7", "kind": "dirty", "context": "social", "expect": "filler", "draft": "There were forty sessions on the schedule. You couldn't possibly attend all of them."}
+{"id": "8", "kind": "dirty", "context": "social", "expect": "abstract-over-number", "draft": "We got a huge number of signups this week, way more than last launch."}
+{"id": "9", "kind": "dirty", "context": "social", "expect": "business-speak", "draft": "This unlocks a step-change in velocity and lets teams leverage their existing stack."}
+{"id": "10", "kind": "dirty", "context": "social", "expect": "em-dash", "draft": "Our new model is faster — cheaper — and it ships today."}
+{"id": "11", "kind": "dirty", "context": "social", "expect": "real-actual", "draft": "This is the real reason your evals are flaky and the actual fix nobody mentions."}
+{"id": "C1", "kind": "clean", "context": "social", "expect": null, "draft": "The deploy failed because the migration ran before the new column existed. Reordering the steps fixed it."}
+{"id": "C2", "kind": "clean", "context": "long-form", "expect": null, "draft": "The migration took three weeks. Most of that was data backfill. The schema change itself landed in an afternoon, and the rollout was uneventful."}
+{"id": "C3", "kind": "clean", "context": "social", "expect": null, "draft": "The release adds three things: resumable uploads, a dark theme, and per-row permissions."}
+{"id": "12", "kind": "dirty", "context": "social", "expect": "label-colon", "draft": "My hardest problem: sales."}
+{"id": "13", "kind": "dirty", "context": "long-form", "expect": "em-dash", "draft": "The launch went fine — mostly — but the docs lagged and support felt it — for a full week."}
+{"id": "14", "kind": "dirty", "context": "social", "expect": ["value-teaser", "throat-clear"], "draft": "The one thing worth 30 seconds today: Pydantic V2.0 bundles tools and hooks into one unit."}
+{"id": "15", "kind": "dirty", "context": "social", "expect": "vision-abstraction", "draft": "We're building an AI-native intelligence layer for field operations."}
+{"id": "C4", "kind": "clean", "context": "social", "expect": null, "draft": "We moved the auth service off the legacy platform onto Workers."}

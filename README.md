@@ -31,7 +31,7 @@ like ad copy, cut it.
 
 1. **Find the hook** — the most surprising true thing, moved to the front and tightened.
 2. **Cut the tells** — throat-clears, manufactured quotability, parataxis, "it's not just X,
-   it's Y", filler, abstract-over-concrete, business-speak, em dashes in posts.
+   it's Y", filler, abstract-over-concrete, business-speak, vision-speak over outcomes, em dashes in posts.
 3. **Cleanup** — vocabulary, length, rhythm.
 
 The full list, with before/after for each tell, lives in [`SKILL.md`](./SKILL.md).
