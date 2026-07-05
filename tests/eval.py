@@ -21,6 +21,8 @@ import argparse, json, os, re, subprocess, sys, urllib.request
 
 TELLS = {
     "throat-clear": "soft setup that delays the point (\"One thing that helps:\")",
+    "value-teaser": "announces something is worth attention instead of just saying it (\"the one thing worth 30 seconds\", \"here's the kicker\", \"worth noting\")",
+    "vision-abstraction": "positioning that names an abstract category (a platform/layer/engine/intelligence) where the concrete outcome belongs; only when it's selling a capability, not when a category noun is a plain literal referent",
     "claimed-emotion": "claims a feeling instead of showing it (\"what surprised me\")",
     "manufactured-drama": "a tease dressed as a hook (\"refuses to\")",
     "manufactured-quotability": "a clever closer built to sound deep, earning nothing",
@@ -42,7 +44,10 @@ def build_prompt(draft, context="social"):
         "Only use ids from this exact list:\n" + lines + "\n\n"
         f"The draft is a {context} piece. 'em-dash' counts in any medium when the density "
         "is high (more than ~1 per 100 words); a single em dash in long-form prose is fine. "
-        "A colon introducing a genuine list is NOT 'label-colon'. Judge accordingly.\n\n"
+        "A colon introducing a genuine list is NOT 'label-colon'. "
+        "'vision-abstraction' applies only to positioning that swaps the concrete outcome for an "
+        "abstract label; a category noun used as a plain literal referent (\"moved off the legacy "
+        "platform\") is NOT vision-abstraction. Judge accordingly.\n\n"
         "Output ONLY a JSON array of the matching ids (e.g. [\"filler\",\"em-dash\"]), "
         "or [] if the draft is clean. No prose, no explanation, just the array.\n\n"
         f"DRAFT:\n{draft}\n"

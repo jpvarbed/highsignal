@@ -1,6 +1,6 @@
 ---
 name: highsignal
-description: 'Strip AI tells and filler from writing and rewrite in a plain human voice. Use when drafting or editing a tweet, thread, LinkedIn post, email, or doc and you want high signal and no slop: lead with the real hook, cut throat-clears, manufactured quotability, parataxis, "it''s not just X, it''s Y", em dashes in posts, business-speak, and filler. Supports detect-only and rewrite modes. Trigger when the user says "clean this up", "make it sound human", "cut the slop", "tighten this post", or "does this read like AI".'
+description: 'Strip AI tells and filler from writing and rewrite in a plain human voice. Use when drafting or editing a tweet, thread, LinkedIn post, email, or doc and you want high signal and no slop: lead with the real hook, cut throat-clears, value-teasers, manufactured quotability, parataxis, "it''s not just X, it''s Y", em dashes in posts, business-speak, vision-speak over concrete outcomes, and filler. Supports detect-only and rewrite modes. Trigger when the user says "clean this up", "make it sound human", "cut the slop", "tighten this post", or "does this read like AI".'
 license: MIT
 compatibility: Any agent that reads a SKILL.md (Claude Code, Cursor, Copilot, etc.). No external tools required.
 metadata:
@@ -61,6 +61,14 @@ A throat-clear in punctuation form. Write the plain sentence.
 - Before: "My hardest problem: sales."
 - After: "Sales is my hardest problem."
 
+**Value-teaser** — a phrase that announces something is worth attention instead of just
+presenting it: "the one thing worth 30 seconds", "here's the kicker", "worth noting", "the
+interesting part is". A throat-clear that packages importance. Agents reach for these as a
+reflex and reuse the same container across pieces — kill it on sight. State the thing; if you
+need a signpost, use a flat label ("Worth a look:") not a value claim.
+- Before: "The one thing worth 30 seconds: Pydantic V2.0 bundles tools and hooks into one unit."
+- After: "Worth a look: Pydantic V2.0 bundles tools and hooks into one unit."
+
 **Claimed emotion** — "what surprised me", "I was fascinated to find". The fact carries it;
 cut the claim.
 
@@ -92,6 +100,15 @@ land harder. Don't flag ordinary informal writing. (In testing, both Claude and 
 this inconsistently, so treat it as a suggestion, not a verdict.)
 - Before: "We got a huge number of signups this week."
 - After: "We got 4,200 signups this week."
+
+**Vision abstraction over the outcome** — an abstract category label ("platform", "layer",
+"solution", "engine", "system", "intelligence") standing in for what the thing does, so the
+reader has to translate it. Readers aren't allergic to vision, they're allergic to homework.
+Name the concrete outcome, ideally with a number. Flag it when the label is doing positioning
+work and a concrete result is available; don't flag a category noun used as a literal referent
+("we moved the service off the legacy platform").
+- Before: "an AI-native intelligence layer for field operations"
+- After: "we cut pump inspection reports from 42 minutes to 6."
 
 **Business-speak** — lever, unlock, leverage, move the needle, supercharge. Use the plain verb.
 
