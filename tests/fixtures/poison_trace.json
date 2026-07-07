@@ -1,0 +1,21 @@
+{
+  "_comment": "Negative control for the adherence checker. The paragraph-arc lens emitted an out-of-lane 'em-dash' finding (em-dash belongs to the tells lens). The adherence checker MUST classify paragraph-arc as drift => adherence FAIL. A test asserts this; if the checker passes this fixture, the build fails. This is what stops a rubber-stamp adherence implementation.",
+  "case_id": "poison",
+  "lens_outputs": {
+    "tells": [],
+    "adjacency": [
+      { "category": "non-sequitur", "quote": "The kitchen restocked the oat milk on Thursday." }
+    ],
+    "paragraph-arc": [
+      { "category": "em-dash", "quote": "faster — cheaper — and it ships today" }
+    ],
+    "whole-arc": []
+  },
+  "expected_adherence": {
+    "tells": "PASS",
+    "adjacency": "PASS",
+    "paragraph-arc": "FAIL",
+    "whole-arc": "PASS"
+  },
+  "expected_case_adherence": "FAIL"
+}
