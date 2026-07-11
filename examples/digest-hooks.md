@@ -58,3 +58,9 @@ directory of files) and Pydantic AI V2.0 (composable Capabilities) shipped. Noth
 **Hook:** The local harness work finally has the outside paper it needed. TTHE landed yesterday with almost the same loop you just wired: inspect execution traces, propose harness edits, judge the change, persist the better control program. The useful move today is to treat HAR-43 as a real receipt, not another generic "agents need loops" take.
 **Jason's edit:**
 **Rule:**
+
+## 2026-07-11
+**Facts:** Local inference canary baseline exists with Codex and Cursor both passing 2/3 but failing different workflow-shaped checks. `plugins` added `principle-model-the-domain`; global `make-interfaces-feel-better` updated. Claude Code latest is 2.1.207 with auto mode enabled on managed backends and fixes for terminal freezing and consent recording. Vercel shipped trace tree/waterfall views and sensitive env redaction in build logs. GitHub Trending showed multiple skills repos hot today. The strongest new paper was Proactive Memory Agent, which names behavioral state decay and uses a memory agent to re-surface relevant state.
+**Hook:** The useful signal today is local: the inference canary baseline caught different failures in Codex and Cursor on the same three workflow-shaped cases. The trend links matter because the market is now shipping the supporting pieces around that loop: agent skills, trace views, redacted logs, and proactive memory.
+**Jason's edit:**
+**Rule:**
