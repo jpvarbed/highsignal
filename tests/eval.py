@@ -77,31 +77,72 @@ ARC_LENS_CATEGORY_DESCRIPTIONS = {
     },
 }
 
+ARC_LENS_CALIBRATION = {
+    "tells": (
+        "Calibration: flag only clear, mechanical hits. 'em-dash' counts in any medium when "
+        "the density is high (more than ~1 per 100 words, or 2+ in a short piece); a single em "
+        "dash in long-form prose is fine. A colon introducing a genuine list is NOT "
+        "'label-colon'. 'abstract-over-number' is a low-confidence rewrite hint, NOT a "
+        "detectable error: do not flag it when the vague phrase merely paraphrases a concrete "
+        "number that already appears elsewhere in the draft, and do not flag ordinary informal "
+        "wording. A sentence sitting oddly next to its neighbor is the adjacency lens's lane, "
+        "not a tell."
+    ),
+    "adjacency": (
+        "Calibration: flag only breaks a reader actually stumbles on. Do NOT flag "
+        "'missing-connective' when the reader effortlessly supplies the link: plain narrative "
+        "sequence, a cause already stated nearby, an explicit because/so/but already present, "
+        "or a paragraph break that simply moves to the next point. A paragraph transition "
+        "changing topic is paragraph/whole-piece territory, not yours. Flag 'non-sequitur' "
+        "only when two adjacent sentences genuinely share no logical link, and "
+        "'broken-referent' only when a pronoun really has two or more live candidate "
+        "antecedents at the boundary."
+    ),
+    "paragraph-arc": (
+        "Calibration: judge whole paragraphs only. If the draft is a single short paragraph, "
+        "output [] unless that one paragraph genuinely restates something or is deletable as a "
+        "unit. Do not re-describe a sentence-level flow break (two oddly-joined sentences) as "
+        "'no-single-job'; that is the adjacency lens's lane. 'restates-previous' requires a "
+        "paragraph that adds no new information over the one before it."
+    ),
+    "whole-arc": (
+        "Calibration: flag only clear whole-piece failures. 'weak-opening' means the real news "
+        "is buried later in the piece while the opening spends itself on setup. A short "
+        "factual update that states its point and stops does NOT have a 'weak-landing'; a "
+        "plain declarative ending is fine. Never flag 'weak-landing' or 'weak-opening' on a "
+        "draft of one or two sentences that delivers its information directly. If a sentence "
+        "merely sits oddly next to its neighbor, that is the adjacency lens's lane."
+    ),
+}
+
 def build_lens_prompt(lens, draft, context="social"):
     """Build the single structured-call prompt for one lens agent in the fan-out.
 
     Each lens is its own backend call (its raw output IS that agent's trace). Output shape is
     fixed by tests/lens_contract.md: a JSON array of {"category", "quote"} findings, using only
-    that lens's allowed categories.
+    that lens's allowed categories. Calibration blocks bias each lens toward precision: in a
+    fan-out, an out-of-lane or borderline flag is a false positive another lens's owner would
+    have handled.
     """
     idx = LENS_ORDER.index(lens) + 1
     other_lenses = ", ".join(l for l in LENS_ORDER if l != lens)
     if lens == "tells":
         cats = "\n".join(f"- {k}: {v}" for k, v in TELLS.items())
-        note = ("'em-dash' counts in any medium when the density is high (more than ~1 per 100 "
-                "words); a single em dash in long-form prose is fine. A colon introducing a "
-                "genuine list is NOT 'label-colon'.")
     else:
         cats = "\n".join(f"- {k}: {v}" for k, v in ARC_LENS_CATEGORY_DESCRIPTIONS[lens].items())
-        note = ""
     return (
         f"You are one reviewer in a four-lens fan-out over a piece of writing, run bottom-up: "
         f"tells -> adjacency -> paragraph-arc -> whole-arc. You are lens {idx} of 4: '{lens}'.\n"
         f"Flag ONLY issues that belong to the '{lens}' lens, using ONLY the category ids below. "
-        f"Do not flag anything that belongs to the other lenses ({other_lenses}) even if you "
-        f"notice it; another reviewer owns that lane.\n\n"
+        f"Each other lane ({other_lenses}) has its own reviewer: a defect you notice outside "
+        f"your lane WILL be caught by its owner, and reporting it yourself, or re-describing it "
+        f"in your own categories, is a false positive that costs the review.\n\n"
+        f"Precision over recall. Most drafts are clean at most lenses. Flag a finding only when "
+        f"a careful human editor would agree it is a real defect at your granularity; if you "
+        f"are unsure, or the draft reads fine through your lens, output []. An empty array is "
+        f"the normal answer, not a failure.\n\n"
         "Allowed categories for this lens (use these ids EXACTLY, and only these):\n" + cats + "\n\n"
-        f"The draft is a {context} piece. " + (note + "\n\n" if note else "\n") +
+        f"The draft is a {context} piece. " + ARC_LENS_CALIBRATION[lens] + "\n\n"
         "For each issue you find, quote the exact offending span verbatim from the draft.\n\n"
         "Output ONLY a JSON array of findings, each shaped exactly "
         '{"category": "<id from the list above>", "quote": "<verbatim offending span>"}. '
@@ -121,7 +162,11 @@ def build_prompt(draft, context="social"):
         "A colon introducing a genuine list is NOT 'label-colon'. "
         "'vision-abstraction' applies only to positioning that swaps the concrete outcome for an "
         "abstract label; a category noun used as a plain literal referent (\"moved off the legacy "
-        "platform\") is NOT vision-abstraction. Judge accordingly.\n\n"
+        "platform\") is NOT vision-abstraction. "
+        "Check 'filler' deliberately, sentence by sentence: if deleting a sentence would lose no "
+        "information because it only restates or dramatizes what an adjacent sentence already "
+        "establishes, flag 'filler' — models under-call this one. A sentence carrying its own "
+        "concrete fact (a count, a cause, a duration) is not filler. Judge accordingly.\n\n"
         "Output ONLY a JSON array of the matching ids (e.g. [\"filler\",\"em-dash\"]), "
         "or [] if the draft is clean. No prose, no explanation, just the array.\n\n"
         f"DRAFT:\n{draft}\n"
