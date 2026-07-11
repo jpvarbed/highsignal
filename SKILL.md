@@ -22,36 +22,51 @@ marketing, rewrite it.
 
 ## The review
 
-Work top down. A quick edit is one pass through the four levels; product-critical writing
-(anything published or sent under the author's name) gets full passes plus the fan-out below.
+Four lenses, run bottom-up: `tells`, then `adjacency`, then `paragraph-arc`, then `whole-arc`.
+Each lens catches a break at a different scale, from a single sentence up to the whole piece,
+and stays inside its own lane rather than re-grading what the lens below or above it already
+covers.
 
-1. **Whole-piece arc.** State the spine in one sentence. The first sentence earns the read: the
-   true thing that most updates what the reader currently believes, moved to the front, never
+1. `tells` scans every sentence against the tells below and the avoid-ai-writing detector, and
+   ships at 0 / Clean. Two checks come before calling it clean: count every em dash in the
+   piece (see Em-dash overuse), and mark every run of two or more short period-separated
+   sentences and check Parataxis.
+2. `adjacency` checks whether each sentence follows from the one before it. It flags a
+   non-sequitur when two adjacent sentences share no logical link, a missing connective when
+   the link exists but the reader has to supply "because," "so," or "but" that the draft never
+   states, a broken referent when a pronoun at a sentence boundary could point to more than one
+   antecedent, and a local contradiction when adjacent sentences conflict. This lens is broader
+   than the parataxis tell: parataxis stays a sentence-level tell under `tells`, adjacency is
+   the general sentence-to-sentence flow check, and some overlap between the two is expected.
+3. `paragraph-arc` asks whether each paragraph does one job and has a shape. It cuts any
+   paragraph whose removal loses nothing, and any paragraph that restates the one before it.
+4. `whole-arc` states the spine in one sentence. The first sentence earns the read: the true
+   thing that most updates what the reader currently believes, moved to the front and never
    manufactured. The last sentence lands. Every paragraph moves the spine forward.
-2. **Paragraph arc.** One job per paragraph, with a shape. Delete any paragraph whose removal
-   loses nothing. Cut any that restates the one before it.
-3. **Sentence prose.** Each sentence in its tightest form; for anything carrying fat, offer the
-   shorter version. Vary sentence length. Read-aloud test: would a sharp person say this to
-   another person's face?
-4. **Sentence tells.** Scan every sentence against the tells below and the avoid-ai-writing
-   detector; ship at 0 / Clean. Two mandatory micro-scans before you call it clean: (a) count
-   every `—` / em dash in the piece (see Em-dash overuse); (b) mark every run of 2+ short
-   period-separated sentences and check Parataxis. Missing either scan is how those tells
-   slip through.
 
-**Hard rules.** Remove throat-clears, label-colons, and weird punctuation (em dashes: at most
-~1 per 100 words, ideally none; two+ in a short piece or three+ anywhere is always a fail).
-Cutting is the default; anything added must add information. Always offer the more concise
-wording.
+The review runs in two passes. Pass 1 finds: the four lenses run concurrently, and each one
+reports findings scoped to its own lane, the quoted offending text plus a proposed fix, without
+touching the draft itself. Pass 2 verifies and applies: for each finding, check it against the
+text again, confirm it is real and that the fix keeps the meaning, drop what does not hold up,
+apply what survives, then re-state the spine and confirm the arc still holds once the edits
+land.
 
-**Grill gate.** If the arc won't state and the fix isn't in the text, don't invent one. In
-rewrite mode, ask the author (companion: `grilling`) for the one point, the reader, and the next
+A quick edit runs one reviewer through all four lenses inline, one find pass and one verify
+pass, and that is the default for throwaway writing. Product-critical writing, anything
+published or sent under the author's name, runs the real fan-out instead: one reviewer per
+lens for pass 1, then the same verify-and-apply sweep for pass 2. This is the review-council
+pattern aimed at prose, and it is now the one product-critical path; there is no separate
+adversarial pass alongside it.
+
+Remove throat-clears, label-colons, and weird punctuation. Em dashes: at most ~1 per 100
+words, ideally none; two or more in a short piece, or three or more anywhere, is always a
+fail. Cutting is the default; anything added must add information, and the more concise
+wording is always on offer.
+
+If the spine will not state and the fix is not in the text, do not invent one. In rewrite
+mode, ask the author (companion: `grilling`) for the one point, the reader, and the next
 action, then restructure from the answers. In detect mode, flag "arc unclear" and list those
 three questions instead.
-
-**Adversarial fan-out (product-critical only).** Don't review important prose once. Fan out one
-reviewer per lens (arc, concision, tells, hook, read-aloud), synthesize, verify each finding
-against the text before applying. This is the review-council pattern aimed at prose.
 
 ## The tells (detect and fix)
 
