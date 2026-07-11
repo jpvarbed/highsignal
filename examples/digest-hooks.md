@@ -54,8 +54,8 @@ directory of files) and Pydantic AI V2.0 (composable Capabilities) shipped. Noth
 **Rule:**
 
 ## 2026-07-10
-**Facts:** Local receipts: HAR-43 integration fixes, review-council Cursor seat key loading from `.env.local` + BWS, trace secret-scrub work, new `gtm-diligence` skill, and Brandlens MCP v1 beta remote connector + `/v1` API. `mattpocockskills` pulled `setup-ts-deep-modules`; `knowledge-work-plugins` pulled metadata. Claude Code latest is 2.1.206 with `/doctor`, worktree confirmation, background-agent upgrade, and MCP timeout fixes. TTHE landed July 9 and matches the local harness-evolution loop. Feed signal supported Matt skills, Claude/Fable map-vs-territory framing, Claude budget warnings, Product Hunt agent launches, and Manufact MCP Cloud on HN.
-**Hook:** The local harness work finally has the outside paper it needed. TTHE landed yesterday with almost the same loop you just wired: inspect execution traces, propose harness edits, judge the change, persist the better control program. The useful move today is to treat HAR-43 as a real receipt, not another generic "agents need loops" take.
+**Facts:** Local receipts: harness integration fixes, review-council Cursor seat key loading from `.env.local` + BWS, trace secret-scrub work, new `gtm-diligence` skill, and Brandlens MCP v1 beta remote connector + `/v1` API. `mattpocockskills` pulled `setup-ts-deep-modules`; `knowledge-work-plugins` pulled metadata. Claude Code latest is 2.1.206 with `/doctor`, worktree confirmation, background-agent upgrade, and MCP timeout fixes. TTHE landed July 9 and matches the local harness-evolution loop. Feed signal supported Matt skills, Claude/Fable map-vs-territory framing, Claude budget warnings, Product Hunt agent launches, and Manufact MCP Cloud on HN.
+**Hook:** The local harness work finally has the outside paper it needed. TTHE landed yesterday with almost the same loop you just wired: inspect execution traces, propose harness edits, judge the change, persist the better control program. The useful move today is to treat the harness integration work as a real receipt, not another generic "agents need loops" take.
 **Jason's edit:**
 **Rule:**
 
