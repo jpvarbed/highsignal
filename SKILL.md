@@ -34,11 +34,15 @@ Work top down. A quick edit is one pass through the four levels; product-critica
    shorter version. Vary sentence length. Read-aloud test: would a sharp person say this to
    another person's face?
 4. **Sentence tells.** Scan every sentence against the tells below and the avoid-ai-writing
-   detector; ship at 0 / Clean.
+   detector; ship at 0 / Clean. Two mandatory micro-scans before you call it clean: (a) count
+   every `—` / em dash in the piece (see Em-dash overuse); (b) mark every run of 2+ short
+   period-separated sentences and check Parataxis. Missing either scan is how those tells
+   slip through.
 
 **Hard rules.** Remove throat-clears, label-colons, and weird punctuation (em dashes: at most
-~1 per 100 words, ideally none). Cutting is the default; anything added must add information.
-Always offer the more concise wording.
+~1 per 100 words, ideally none; two+ in a short piece or three+ anywhere is always a fail).
+Cutting is the default; anything added must add information. Always offer the more concise
+wording.
 
 **Grill gate.** If the arc won't state and the fix isn't in the text, don't invent one. In
 rewrite mode, ask the author (companion: `grilling`) for the one point, the reader, and the next
@@ -80,9 +84,33 @@ earning it. Tell: it would fit on a poster but doesn't follow from anything you 
 - Before: "The fat was always the point. The salad was just keeping it company."
 - After: cut it, or state the reasoning that should have led there.
 
-**Parataxis** — short clauses stacked with no conjunction, so the juxtaposition implies a
-connection you never made. State the relationship (because / so / but), or merge into one
-sentence. https://en.wikipedia.org/wiki/Parataxis
+**Parataxis** — short clauses or sentences stacked with no conjunction, so the juxtaposition
+implies a connection you never made. Mechanical scan (do this on every piece, not only when
+something "sounds punchy"): find every run of 2+ consecutive independent sentences, each under
+~10 words, joined only by periods — no because / so / but / and / while / which between them.
+If the link is left for the reader to invent (punchline, faux progression, poster pair), flag
+`parataxis`. Do not skip the flag when another tell also fits: a profundity pair is often both
+parataxis and manufactured quotability — emit both. Not parataxis when each sentence adds a
+distinct fact the next one depends on ("The deploy failed. Reordering the steps fixed it.").
+
+Always flag these shapes (canonical AI staccato):
+- **Three-beat staccato:** three short period-separated beats, often parallel ("We X. We Y.
+  We Z." / "We shipped fast. We broke things. We learned."). The third beat is the "lesson"
+  the first two never earned in prose.
+- **Two-sentence profundity pair:** sentence A asserts a fate ("X was always the bottleneck");
+  sentence B rebrands a second actor as sidekick or foil ("Y was just along for the ride" /
+  "just keeping it company" / "never the real story"). The period is doing the work of a
+  conjunction you never wrote.
+- **Any period-run that fails the read-aloud test:** if you'd have to insert because / so /
+  but / and to say it out loud, the periods are faking the logic.
+
+Fix: state the relationship, or merge into one sentence.
+https://en.wikipedia.org/wiki/Parataxis
+- Before: "We shipped fast. We broke things. We learned."
+- After: "We shipped fast, broke things, and learned what not to do next time."
+- Before: "The cache was always the bottleneck. The database was just along for the ride."
+- After: "The cache was the bottleneck; the database was fine." (Flag both parataxis and
+  manufactured quotability: second sentence is poster-ready and follows from nothing argued.)
 
 **"It's not just X, it's Y"** — fake elevation: demote the literal thing to crown a grander
 one. Just say what it is.
@@ -112,9 +140,37 @@ work and a concrete result is available; don't flag a category noun used as a li
 
 **Business-speak** — lever, unlock, leverage, move the needle, supercharge. Use the plain verb.
 
-**Em-dash overuse** — at most ~1 per 100 words, ideally none, in any medium (not only posts).
-A period or comma reads more human, and the avoid-ai-writing detector flags higher density as the
-`em-dash` tell. Multiple em dashes in a short piece is one of the loudest AI tells there is.
+**Em-dash overuse** — flag the `em-dash` tell on density and on pattern, not only "posts."
+Hard ceiling: at most ~1 em dash per 100 words, ideally none in any medium. A period, comma,
+or parentheses reads more human.
+
+Mechanical scan (do this before judging "does this feel like overuse?"): search the draft for
+every `—` (U+2014 EM DASH). Count them. Also catch lookalikes models paste in: `--` used as a
+dash, or spaced hyphens ` - ` standing in for an em dash. Do not wait for the avoid-ai-writing
+detector, and do not skip the count because the piece is "long-form" or otherwise fine.
+
+Always flag when any of these hold (zero judgment, zero "but the rest is clean"):
+- **Two or more em dashes in a short piece** (under ~50 words) — the loudest AI tell. Social
+  one-liners with a pair of dashes almost always fail. Count beats, not vibes: "faster —
+  cheaper — and it ships today" is two dashes in one line → flag.
+- **List / appositive dashes** that replace commas in a short run: "A — B — and C". Even two
+  dashes in a three-item list is enough; rewrite with commas.
+- **Paired / interruptive dashes** used as fake parentheticals: "X — aside — Y" (e.g. "went
+  fine — mostly — but…"). Those two count toward density; if a third dash trails later in the
+  same sentence or paragraph ("…felt it — for a full week"), flag immediately.
+- **Three or more em dashes in any piece**, short or long-form. Long-form is not a free pass
+  and does not reset the counter. "One justified aside" means exactly one `—` in the whole
+  piece when the word count is high; two paired asides plus a trailing dash is overuse.
+
+Single em dash in long-form prose (~100+ words) used once as a genuine aside can pass; still
+prefer a period when the aside can stand alone. If you counted two or more, you do not get
+this exception.
+- Before: "Our new model is faster — cheaper — and it ships today."
+- After: "Our new model is faster, cheaper, and it ships today."
+- Before: "The launch went fine — mostly — but the docs lagged and support felt it — for a
+  full week."
+- After: "The launch went mostly fine, but the docs lagged and support felt it for a full
+  week."
 
 **Markdown in tweets** — `*italics*` and `**bold**` render as literal asterisks on X, and `#`
 makes a hashtag, not a header. Don't use markdown emphasis in a post.
