@@ -70,6 +70,27 @@ scripts/score.sh codex
 ANTHROPIC_API_KEY=… scripts/score.sh anthropic
 ```
 
+The review's four lenses (`tells` → `adjacency` → `paragraph-arc` → `whole-arc`, see "The
+review" in [`SKILL.md`](./SKILL.md)) have their own fan-out eval, scored deterministically
+against [`tests/lens_contract.md`](./tests/lens_contract.md) with no LLM judge in the loop:
+
+- [`tests/arc_cases.jsonl`](./tests/arc_cases.jsonl) — 5 planted cases (one issue planted at a
+  specific lens) + 2 clean cases.
+- `tests/eval.py --arc` — runs each case through all four lenses, scores adherence (did the
+  lens stay in its own category set) and outcome (did the expected lens catch it, quietly),
+  and prints both aggregate rates.
+- [`tests/test_lens_contract.py`](./tests/test_lens_contract.py) — deterministic-scorer unit
+  tests (poison control + a clean-case false-positive check), no network calls.
+
+```bash
+python3 tests/eval.py --arc --backend codex --trace transcript   # writes tests/traces/<case>/<lens>.txt
+python3 tests/eval.py --arc --backend codex --trace arize         # + OTLP JSON export
+python3 tests/test_lens_contract.py
+```
+
+Eval v1 scores pass-1 lens detection only; the pass-2 verify-and-apply sweep is part of the
+skill but out of eval scope for now (see [`tests/RESULTS.md`](./tests/RESULTS.md)).
+
 Latest cross-model results: [`tests/RESULTS.md`](./tests/RESULTS.md).
 
 ## Companions

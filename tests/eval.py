@@ -16,6 +16,11 @@ Usage:
   python3 tests/eval.py --backend codex
   python3 tests/eval.py --backend anthropic --model claude-opus-4-8
   python3 tests/eval.py --backend fireworks --model accounts/fireworks/models/qwen3-235b-a22b
+
+Narrative-arc lens fan-out (tests/arc_cases.jsonl, scored per tests/lens_contract.md):
+  python3 tests/eval.py --arc --backend codex --trace transcript
+  python3 tests/eval.py --arc --backend codex --trace arize
+  python3 tests/test_lens_contract.py   # deterministic-scorer unit tests, no network
 """
 import argparse, json, os, re, secrets, subprocess, sys, time, urllib.error, urllib.request
 
