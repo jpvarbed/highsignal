@@ -86,7 +86,9 @@ ARC_LENS_CALIBRATION = {
         "detectable error: do not flag it when the vague phrase merely paraphrases a concrete "
         "number that already appears elsewhere in the draft, and do not flag ordinary informal "
         "wording. A sentence sitting oddly next to its neighbor is the adjacency lens's lane, "
-        "not a tell."
+        "not a tell. 'filler' judges a sentence within its own paragraph: when a sentence reads "
+        "as redundant only because its whole PARAGRAPH restates the previous paragraph, that "
+        "is the paragraph-arc lens's lane ('restates-previous'), not filler."
     ),
     "adjacency": (
         "Calibration: flag only breaks a reader actually stumbles on. Do NOT flag "
@@ -106,12 +108,16 @@ ARC_LENS_CALIBRATION = {
         "paragraph that adds no new information over the one before it."
     ),
     "whole-arc": (
-        "Calibration: flag only clear whole-piece failures. 'weak-opening' means the real news "
-        "is buried later in the piece while the opening spends itself on setup. A short "
-        "factual update that states its point and stops does NOT have a 'weak-landing'; a "
-        "plain declarative ending is fine. Never flag 'weak-landing' or 'weak-opening' on a "
-        "draft of one or two sentences that delivers its information directly. If a sentence "
-        "merely sits oddly next to its neighbor, that is the adjacency lens's lane."
+        "Calibration: flag only clear whole-piece failures, and only on pieces that HAVE a "
+        "whole-piece structure. If the draft is a single paragraph, output []: a one-paragraph "
+        "note does not need a spine, an opening, or a landing, and any defect inside it belongs "
+        "to a lower lens (a sentence that does not follow from its neighbor is adjacency's "
+        "lane even when it muddies the point — never re-describe that as 'spine-unclear'). "
+        "'weak-opening' means the real news is buried later in the piece while the opening "
+        "spends itself on setup. A piece that states its point and stops does NOT have a "
+        "'weak-landing'; a plain declarative ending is fine. A paragraph whose defect is "
+        "restating the previous paragraph is the paragraph-arc lens's lane "
+        "('restates-previous'), not 'paragraph-off-spine'."
     ),
 }
 
