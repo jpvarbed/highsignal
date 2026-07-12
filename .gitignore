@@ -5,3 +5,5 @@ PLAN.md
 __pycache__/
 *.pyc
 tests/traces/
+tests/traces_holdout/
+tests/holdout_run.json

@@ -125,8 +125,19 @@ def parse_yes_no(text):
 
 
 def call_backend(fn, model, prompt, label, trace_path):
-    """One fresh backend call; always writes its raw transcript. Propagates quota errors."""
-    raw = fn(prompt, model)
+    """One fresh backend call; always writes its raw transcript. Propagates quota errors.
+
+    A hung CLI call (subprocess.TimeoutExpired) is retried once; a second hang is raised as
+    RuntimeError so the runner checkpoints and stops -- a timeout must never score as a miss.
+    """
+    try:
+        raw = fn(prompt, model)
+    except subprocess.TimeoutExpired:
+        print(f"    ({label}: backend call timed out, retrying once)", flush=True)
+        try:
+            raw = fn(prompt, model)
+        except subprocess.TimeoutExpired:
+            raise RuntimeError(f"{label}: backend call timed out twice; stopping (not a miss)")
     os.makedirs(os.path.dirname(trace_path), exist_ok=True)
     with open(trace_path, "w") as f:
         f.write(raw)
