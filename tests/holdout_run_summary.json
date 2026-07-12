@@ -1,0 +1,1167 @@
+{
+  "backend": "codex",
+  "model": null,
+  "trials": 3,
+  "judge_n": 3,
+  "cases": {
+    "hd1": {
+      "expect_lens": "tells",
+      "expect_category": "manufactured-drama",
+      "label_origin": "derived",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "em-dash",
+                "quote": "Your feeds surfaced two frameworks built on the same premise — Vercel Eve (an agent is a directory of files) and Databricks Omnigent (a meta-harness sitting above Claude Code and Codex)."
+              },
+              {
+                "category": "em-dash",
+                "quote": "This is the self-evolving-digest thread from yesterday's candidates, now with a paper and two shipping tools behind it."
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "label-colon",
+                "quote": "the same idea today: the harness improves itself"
+              },
+              {
+                "category": "parataxis",
+                "quote": "rewrite their operating loop, +30–60% on Terminal-Bench 2.0"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            true
+          ]
+        }
+      ]
+    },
+    "hd2": {
+      "expect_lens": "tells",
+      "expect_category": "value-teaser",
+      "label_origin": "derived",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "value-teaser",
+                "quote": "The one thing worth 30 seconds"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "value-teaser",
+                "quote": "The one thing worth 30 seconds"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "value-teaser",
+                "quote": "The one thing worth 30 seconds:"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    "ha3": {
+      "expect_lens": "tells",
+      "expect_category": "filler",
+      "label_origin": "agent-labeled",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "label-colon",
+                "quote": "Why it matters:"
+              },
+              {
+                "category": "not-just-x",
+                "quote": "infrastructure claims, not just local workflow preferences"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "label-colon",
+                "quote": "Why it matters:"
+              },
+              {
+                "category": "not-just-x",
+                "quote": "infrastructure claims, not just local workflow preferences"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "label-colon",
+                "quote": "Why it matters:"
+              },
+              {
+                "category": "not-just-x",
+                "quote": "infrastructure claims, not just local workflow preferences"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            false
+          ]
+        }
+      ]
+    },
+    "ha4": {
+      "expect_lens": "tells",
+      "expect_category": "parataxis",
+      "label_origin": "agent-labeled",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "parataxis",
+                "quote": "Re-linked mattpocock, re-applied the 7 culls, pruned no broken symlinks."
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "parataxis",
+                "quote": "Re-linked mattpocock, re-applied the 7 culls, pruned no broken symlinks."
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    "ha5": {
+      "expect_lens": "tells",
+      "expect_category": "business-speak",
+      "label_origin": "agent-labeled",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "business-speak",
+                "quote": "highest-leverage"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "business-speak",
+                "quote": "highest-leverage"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "business-speak",
+                "quote": "highest-leverage"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    "ha6": {
+      "expect_lens": "tells",
+      "expect_category": "em-dash",
+      "label_origin": "agent-labeled",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "em-dash",
+                "quote": "`wayfinder` — now claims a ticket by *assigning* it (not a label) and prefers native blocking with stated rationale; `grilling` — gate + leading-word tweak; `tdd` — doc ref fix pointing at the `code-review` skill."
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "em-dash",
+                "quote": "`wayfinder` — now claims a ticket by *assigning* it (not a label) and prefers native blocking with stated rationale; `grilling` — gate + leading-word tweak; `tdd` — doc ref fix pointing at the `code-review` skill."
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "em-dash",
+                "quote": "`wayfinder` — now claims a ticket by *assigning* it (not a label) and prefers native blocking with stated rationale; `grilling` — gate + leading-word tweak; `tdd` — doc ref fix pointing at the `code-review` skill"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    "ha7": {
+      "expect_lens": "tells",
+      "expect_category": "label-colon",
+      "label_origin": "agent-labeled",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "label-colon",
+                "quote": "One portability wart:"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "label-colon",
+                "quote": "One portability wart:"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [
+              {
+                "category": "label-colon",
+                "quote": "One portability wart:"
+              }
+            ],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ]
+        }
+      ]
+    },
+    "ha8": {
+      "expect_lens": "adjacency",
+      "expect_category": "missing-connective",
+      "label_origin": "agent-labeled",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ]
+        }
+      ]
+    },
+    "ha9": {
+      "expect_lens": "paragraph-arc",
+      "expect_category": "no-shape",
+      "label_origin": "agent-labeled",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": false,
+          "judge_outcome": false,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": true,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    "hc1": {
+      "expect_lens": null,
+      "expect_category": null,
+      "label_origin": "agent-labeled",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": false,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": false,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": false,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    "hc2": {
+      "expect_lens": null,
+      "expect_category": null,
+      "label_origin": "agent-labeled",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": false,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": false,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": false,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    "hc3": {
+      "expect_lens": null,
+      "expect_category": null,
+      "label_origin": "agent-labeled",
+      "skill": [
+        {
+          "trial": 1,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 2,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        },
+        {
+          "trial": 3,
+          "deterministic_outcome": true,
+          "judge_outcome": true,
+          "judge_votes": [
+            false,
+            false,
+            false
+          ],
+          "case_adherence": true,
+          "lens_findings": {
+            "tells": [],
+            "adjacency": [],
+            "paragraph-arc": [],
+            "whole-arc": []
+          }
+        }
+      ],
+      "baseline": [
+        {
+          "trial": 1,
+          "judge_outcome": false,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 2,
+          "judge_outcome": false,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "trial": 3,
+          "judge_outcome": false,
+          "judge_votes": [
+            true,
+            true,
+            true
+          ]
+        }
+      ]
+    }
+  }
+}
